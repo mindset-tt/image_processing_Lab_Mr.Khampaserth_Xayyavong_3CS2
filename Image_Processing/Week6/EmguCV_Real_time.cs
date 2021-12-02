@@ -152,7 +152,7 @@ namespace WindowsFormsApp1.Week6
 
             if (saveImage.ShowDialog() == DialogResult.OK)
             {
-                imageBox1.Image.Equals(saveImage.FileName);
+                imageBox1.Image.Save(saveImage.FileName);
             }
         }
 
