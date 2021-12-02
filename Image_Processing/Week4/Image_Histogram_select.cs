@@ -1,7 +1,15 @@
-﻿using Emgu.CV;
-using Emgu.CV.Structure;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Emgu.CV;
+using Emgu.Util;
+using Emgu.CV.Structure;
 
 namespace WindowsFormsApp1.Week4
 {
@@ -23,8 +31,11 @@ namespace WindowsFormsApp1.Week4
             if (OpenFile.ShowDialog() == DialogResult.OK)
             {
                 oriImage = new Image<Bgr, byte>(OpenFile.FileName);
-
-                G = oriImage[1]; B = oriImage[0]; R = oriImage[2]; imageBox1.Image = oriImage;
+                imageBox1.Image = oriImage;
+                G = oriImage[1];
+                B = oriImage[0];
+                R = oriImage[2];
+                imageBox1.Image = oriImage;
                 if (radioButton1.Checked)
                 {
                     imageBox2.Image = B;
@@ -36,7 +47,7 @@ namespace WindowsFormsApp1.Week4
                 else if (radioButton2.Checked)
                 {
                     imageBox2.Image = G;
-                    histogramBox1.ClearHistogram(); 
+                    histogramBox1.ClearHistogram();
                     histogramBox1.GenerateHistograms(G, 256);
                     histogramBox1.Refresh();
 
@@ -54,34 +65,31 @@ namespace WindowsFormsApp1.Week4
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            //B = oriImage[0];
+            B = oriImage[0];
             imageBox2.Image = B;
-
             histogramBox1.ClearHistogram();
-            histogramBox1.Refresh();
             histogramBox1.GenerateHistograms(B, 256);
-
+            histogramBox1.Refresh();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
-           // G = oriImage[1];
+            G = oriImage[1];
             imageBox2.Image = G;
             histogramBox1.ClearHistogram();
-            histogramBox1.Refresh();
             histogramBox1.GenerateHistograms(G, 256);
+            histogramBox1.Refresh();
 
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            //R = oriImage[2];
+            R = oriImage[2];
             imageBox2.Image = R;
-
             histogramBox1.ClearHistogram();
-            histogramBox1.Refresh();
             histogramBox1.GenerateHistograms(R, 256);
+            histogramBox1.Refresh();
 
         }
     }

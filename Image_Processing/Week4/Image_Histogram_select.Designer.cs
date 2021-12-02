@@ -110,9 +110,9 @@ namespace WindowsFormsApp1.Week4
             // 
             // histogramBox1
             // 
-            this.histogramBox1.Location = new System.Drawing.Point(473, 37);
+            this.histogramBox1.Location = new System.Drawing.Point(465, 34);
             this.histogramBox1.Name = "histogramBox1";
-            this.histogramBox1.Size = new System.Drawing.Size(605, 601);
+            this.histogramBox1.Size = new System.Drawing.Size(610, 603);
             this.histogramBox1.TabIndex = 7;
             // 
             // Image_Histogram_select
