@@ -28,21 +28,24 @@ namespace WindowsFormsApp1.Week4
                 if (radioButton1.Checked)
                 {
                     imageBox2.Image = B;
-                    histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(B, 256);
+                    histogramBox1.ClearHistogram();
+                    histogramBox1.GenerateHistograms(B, 256);
                     histogramBox1.Refresh();
 
                 }
                 else if (radioButton2.Checked)
                 {
                     imageBox2.Image = G;
-                    histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(G, 256);
+                    histogramBox1.ClearHistogram(); 
+                    histogramBox1.GenerateHistograms(G, 256);
                     histogramBox1.Refresh();
 
                 }
                 else if (radioButton3.Checked)
                 {
                     imageBox2.Image = R;
-                    histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(R, 256);
+                    histogramBox1.ClearHistogram();
+                    histogramBox1.GenerateHistograms(R, 256);
                     histogramBox1.Refresh();
 
                 }
@@ -53,7 +56,8 @@ namespace WindowsFormsApp1.Week4
         {
             //B = oriImage[0];
             imageBox2.Image = B;
-            histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(B, 256);
+            histogramBox1.ClearHistogram();
+            histogramBox1.GenerateHistograms(B, 256);
             histogramBox1.Refresh();
 
         }
@@ -61,8 +65,8 @@ namespace WindowsFormsApp1.Week4
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             // G = oriImage[1];
-            imageBox2.Image = G;
-            histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(G, 256);
+            histogramBox1.ClearHistogram();
+            histogramBox1.GenerateHistograms(G, 256);
             histogramBox1.Refresh();
 
         }
@@ -70,8 +74,8 @@ namespace WindowsFormsApp1.Week4
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             //R = oriImage[2];
-            imageBox2.Image = R;
-            histogramBox1.ClearHistogram(); histogramBox1.GenerateHistograms(R, 256);
+            histogramBox1.ClearHistogram();
+            histogramBox1.GenerateHistograms(R, 256);
             histogramBox1.Refresh();
 
         }
