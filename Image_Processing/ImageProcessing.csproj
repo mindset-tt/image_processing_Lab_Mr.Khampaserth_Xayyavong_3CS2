@@ -149,6 +149,12 @@
     <Compile Include="Week6\EmguCV_Real_time.Designer.cs">
       <DependentUpon>EmguCV_Real_time.cs</DependentUpon>
     </Compile>
+    <Compile Include="Week7\EmguCV_detect_border.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week7\EmguCV_detect_border.Designer.cs">
+      <DependentUpon>EmguCV_detect_border.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Week2\GrayScale_Black_and_White_and_Invert.resx">
       <DependentUpon>GrayScale_Black_and_White_and_Invert.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Week6\EmguCV_Real_time.resx">
       <DependentUpon>EmguCV_Real_time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week7\EmguCV_detect_border.resx">
+      <DependentUpon>EmguCV_detect_border.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

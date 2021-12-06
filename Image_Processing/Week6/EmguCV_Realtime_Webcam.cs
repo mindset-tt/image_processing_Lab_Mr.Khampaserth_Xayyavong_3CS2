@@ -39,8 +39,7 @@ namespace WindowsFormsApp1.Week6
 
         private void button2_Click(object sender, EventArgs e)
         {
-            play = true;
-            Application.Idle -= ProcessFrame1;
+            play = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
