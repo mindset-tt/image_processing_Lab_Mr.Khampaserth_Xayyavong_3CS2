@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+<<<<<<<<< Temporary merge branch 1
             Application.Run(new SetpixelForm());
             Application.Run(new GetPixel());
             Application.Run(new Get_Setpixel());
@@ -29,7 +29,20 @@ namespace WindowsFormsApp1
             Application.Run(new Image_Processing_to_Black_and_White());
             Application.Run(new Image_Processing_to_Black_And_White_ComboBox());
             Application.Run(new EmguCV_Real_time());
-
+=========
+            //Application.Run(new SetpixelForm());
+            //Application.Run(new GetPixel());
+            //Application.Run(new Get_Setpixel());
+            //Application.Run(new GrayCV());
+            //Application.Run(new GrayScale_Black_and_White_and_Invert());
+            //Application.Run(new Emgu_Begining());
+            //Application.Run(new Image_Histogram_select());
+            //Application.Run(new Image_HistogramBoxx());
+            //Application.Run(new Image_Processing_to_Black_and_White());
+            //Application.Run(new Image_Processing_to_Black_And_White_ComboBox());
+            //Application.Run(new EmguCV_Real_time());
+            Application.Run(new EmguCV_Realtime_Webcam());
+>>>>>>>>> Temporary merge branch 2
         }
     }
 }
