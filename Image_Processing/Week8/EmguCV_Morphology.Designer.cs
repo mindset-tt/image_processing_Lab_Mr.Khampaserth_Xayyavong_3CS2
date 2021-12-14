@@ -45,10 +45,10 @@ namespace WindowsFormsApp1.Week8
             this.morpholigicalBinaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dilationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.erosionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.openingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.closingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Week8
             this.morphologyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1047, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1386, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -185,6 +185,20 @@ namespace WindowsFormsApp1.Week8
             this.erosionToolStripMenuItem1.Text = "Erosion";
             this.erosionToolStripMenuItem1.Click += new System.EventHandler(this.erosionToolStripMenuItem1_Click);
             // 
+            // openingToolStripMenuItem1
+            // 
+            this.openingToolStripMenuItem1.Name = "openingToolStripMenuItem1";
+            this.openingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.openingToolStripMenuItem1.Text = "Opening";
+            this.openingToolStripMenuItem1.Click += new System.EventHandler(this.openingToolStripMenuItem1_Click);
+            // 
+            // closingToolStripMenuItem1
+            // 
+            this.closingToolStripMenuItem1.Name = "closingToolStripMenuItem1";
+            this.closingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.closingToolStripMenuItem1.Text = "Closing";
+            this.closingToolStripMenuItem1.Click += new System.EventHandler(this.closingToolStripMenuItem1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 43);
@@ -203,25 +217,11 @@ namespace WindowsFormsApp1.Week8
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
-            // openingToolStripMenuItem1
-            // 
-            this.openingToolStripMenuItem1.Name = "openingToolStripMenuItem1";
-            this.openingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.openingToolStripMenuItem1.Text = "Opening";
-            this.openingToolStripMenuItem1.Click += new System.EventHandler(this.openingToolStripMenuItem1_Click);
-            // 
-            // closingToolStripMenuItem1
-            // 
-            this.closingToolStripMenuItem1.Name = "closingToolStripMenuItem1";
-            this.closingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.closingToolStripMenuItem1.Text = "Closing";
-            this.closingToolStripMenuItem1.Click += new System.EventHandler(this.closingToolStripMenuItem1_Click);
-            // 
             // EmguCV_Morphology
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 560);
+            this.ClientSize = new System.Drawing.Size(1386, 560);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

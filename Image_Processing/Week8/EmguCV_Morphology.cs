@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Week8
             {
                 return;
             }
-            pictureBox2.Image = inputImage.Dilate(1).ToBitmap();
+            pictureBox2.Image = inputImage.Dilate(3).ToBitmap();
 
         }
 
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1.Week8
             {
                 colorImage = new Image<Bgr, byte>(inputImage.Width, inputImage.Height);
                 Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
-                    new Size(3, 3), 
+                    new Size(7, 7), //pien
                     new Point(-1, -1));
                 colorImage = inputImage.MorphologyEx(MorphOp.Close, 
                     kernel, 
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.Week8
             {
                 colorImage = new Image<Bgr, byte>(inputImage.Width, inputImage.Height);
                 Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
-                    new Size(3, 3), 
+                    new Size(3, 3), //pien
                     new Point(-1, -1));
                 colorImage = inputImage.MorphologyEx(MorphOp.Gradient, 
                     kernel,
@@ -117,7 +117,7 @@ namespace WindowsFormsApp1.Week8
             {
                 colorImage = new Image<Bgr, byte>(inputImage.Width, inputImage.Height);
                 Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, 
-                    new Size(3, 3), 
+                    new Size(3, 3), //pien
                     new Point(-1, -1));
                 colorImage = inputImage.MorphologyEx(MorphOp.Tophat, 
                     kernel,
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1.Week8
             {
                 colorImage = new Image<Bgr, byte>(inputImage.Width, inputImage.Height);
                 Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, 
-                    new Size(3, 3), 
+                    new Size(3, 3), //pien
                     new Point(-1, -1));
                 colorImage = inputImage.MorphologyEx(MorphOp.Blackhat, 
                     kernel, 
@@ -184,7 +184,7 @@ namespace WindowsFormsApp1.Week8
                     new Gray(255));
 
                 Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle, 
-                    new Size(3, 3), 
+                    new Size(3, 3), //pien
                     new Point(-1, -1));
                 morphoImage = binaryImage.MorphologyEx(MorphOp.Open, 
                     kernel,
