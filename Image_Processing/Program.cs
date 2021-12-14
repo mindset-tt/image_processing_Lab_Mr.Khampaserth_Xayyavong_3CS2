@@ -5,6 +5,7 @@ using WindowsFormsApp1.Week4;
 using WindowsFormsApp1.Week5;
 using WindowsFormsApp1.Week6;
 using WindowsFormsApp1.Week7;
+using WindowsFormsApp1.Week8;
 
 namespace WindowsFormsApp1
 {
@@ -30,6 +31,7 @@ namespace WindowsFormsApp1
             Application.Run(new Image_Processing_to_Black_And_White_ComboBox());
             Application.Run(new EmguCV_Real_time());
             Application.Run(new EmguCV_detect_border());
+            Application.Run(new EmguCV_Morphology());
         }
     }
 }

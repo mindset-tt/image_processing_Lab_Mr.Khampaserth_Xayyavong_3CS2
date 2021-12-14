@@ -29,7 +29,6 @@ namespace WindowsFormsApp1.Week6
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGray = new System.Windows.Forms.Button();
             this.btnBinary = new System.Windows.Forms.Button();
@@ -40,10 +39,10 @@ namespace WindowsFormsApp1.Week6
             this.btnStop = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.imgBoxVDO = new Emgu.CV.UI.ImageBox();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBoxVDO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -149,30 +148,31 @@ namespace WindowsFormsApp1.Week6
             this.label2.TabIndex = 3;
             this.label2.Text = "Video Source";
             // 
-            // imgBoxVDO
+            // pictureBox1
             // 
-            this.imgBoxVDO.Location = new System.Drawing.Point(20, 231);
-            this.imgBoxVDO.Name = "imgBoxVDO";
-            this.imgBoxVDO.Size = new System.Drawing.Size(581, 392);
-            this.imgBoxVDO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgBoxVDO.TabIndex = 2;
-            this.imgBoxVDO.TabStop = false;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(580, 411);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // imageBox1
+            // pictureBox2
             // 
-            this.imageBox1.Location = new System.Drawing.Point(640, 231);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(579, 391);
-            this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox1.TabIndex = 2;
-            this.imageBox1.TabStop = false;
+            this.pictureBox2.Location = new System.Drawing.Point(626, 212);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(580, 411);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // EmguCV_Real_time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 635);
-            this.Controls.Add(this.imageBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnStop);
@@ -183,12 +183,11 @@ namespace WindowsFormsApp1.Week6
             this.Controls.Add(this.btnGray);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.imgBoxVDO);
             this.Name = "EmguCV_Real_time";
             this.Text = "EmguCV_Real_time";
             this.Load += new System.EventHandler(this.EmguCV_Real_time_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgBoxVDO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +204,7 @@ namespace WindowsFormsApp1.Week6
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private Emgu.CV.UI.ImageBox imgBoxVDO;
-        private Emgu.CV.UI.ImageBox imageBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

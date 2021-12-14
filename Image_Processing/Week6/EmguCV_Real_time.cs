@@ -31,7 +31,7 @@ namespace WindowsFormsApp1.Week6
                 Application.Idle -= ProcessFrame1;
                 Application.Idle -= ProcessFrame2;
                 Application.Idle -= ProcessFram3;
-                imgBoxVDO.Image = null;
+                pictureBox1.Image = null;
 
                 OpenFileDialog opf = new OpenFileDialog();
                 if (opf.ShowDialog() == DialogResult.OK)
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.Week6
                     capture = new VideoCapture(opf.FileName);
                     Mat matrix = new Mat();
                     capture.Read(matrix);
-                    imgBoxVDO.Image = matrix;
+                    pictureBox1.Image = matrix.ToBitmap();
                 }
             }
             else if (comboBox1.SelectedIndex == 0)
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1.Week6
             if (capture != null)
             {
                 capture.Read(frame);
-                imgBoxVDO.Image = frame.ToImage<Bgr, byte>();
+                pictureBox1.Image = frame.ToImage<Bgr, byte>().ToBitmap();
             }
         }
 
@@ -71,14 +71,14 @@ namespace WindowsFormsApp1.Week6
             frame = capture.QueryFrame();
             grayVDO = frame.ToImage<Gray, byte>();
             binaryVDO = grayVDO.ThresholdBinary(new Gray(150), new Gray(255));
-            imgBoxVDO.Image = binaryVDO;
+            pictureBox1.Image = binaryVDO.ToBitmap();
         }
 
         private void ProcessFram3(object sender, EventArgs e)
         {
             frame = capture.QueryFrame();
             grayVDO = frame.ToImage<Gray, byte>();
-            imgBoxVDO.Image = grayVDO;
+            pictureBox1.Image = grayVDO.ToBitmap();
         }
 
         private void EmguCV_Real_time_Load(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace WindowsFormsApp1.Week6
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            imageBox1.Image = imgBoxVDO.Image;
+            pictureBox2.Image = pictureBox1.Image;
         }
 
         private void btnBinary_Click(object sender, EventArgs e)
@@ -121,8 +121,8 @@ namespace WindowsFormsApp1.Week6
 
                     if (!matrix.IsEmpty)
                     {
-                        imgBoxVDO.Image = matrix.ToImage<Bgr, byte>();
-                        double fps = capture.GetCaptureProperty(CapProp.Fps);
+                        pictureBox1.Image = matrix.ToImage<Bgr, byte>().ToBitmap();
+                        double fps = capture.Get(CapProp.Fps);
                         await Task.Delay(1000 / Convert.ToInt32(fps));
                     }
                     else
@@ -152,7 +152,7 @@ namespace WindowsFormsApp1.Week6
 
             if (saveImage.ShowDialog() == DialogResult.OK)
             {
-                imageBox1.Image.Save(saveImage.FileName);
+                pictureBox2.Image.Save(saveImage.FileName);
             }
         }
 

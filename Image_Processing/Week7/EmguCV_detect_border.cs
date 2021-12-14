@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Week7
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 imgInput = new Image<Bgr, byte>(openFile.FileName);
-                imageBox1.Image = imgInput;
+                pictureBox1.Image = imgInput.ToBitmap();
             }
 
         }
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1.Week7
 
        if (saveImage.ShowDialog() == DialogResult.OK)
             {
-                imageBox2.Image.Save(saveImage.FileName);
+                pictureBox2.Image.Save(saveImage.FileName);
                 MessageBox.Show("Saving Complete");
             }
 
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.Week7
             }
             imgCanny = new Image<Gray, byte>(imgInput.Width, imgInput.Height, new Gray(0));
             imgCanny = imgInput.Canny(thr1, thr2);
-            imageBox2.Image = imgCanny;
+            pictureBox2.Image = imgCanny.ToBitmap();
         }
 
         private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1.Week7
             imgSobel = new Image<Gray, float>(imgInput.Width, imgInput.Height, new Gray(0));
 
             imgSobel = imgGray.Sobel(1, 1, kSobel);
-            imageBox2.Image = imgSobel;
+            pictureBox2.Image = imgSobel.ToBitmap();
 
         }
 
@@ -101,7 +101,7 @@ namespace WindowsFormsApp1.Week7
             imgLaplacian = new Image<Gray, float>(imgInput.Width, imgInput.Height, new Gray(0));
 
             imgLaplacian = imgGray.Laplace(kLapalcian);
-            imageBox2.Image = imgLaplacian;
+            pictureBox2.Image = imgLaplacian.ToBitmap();
 
         }
 
@@ -120,7 +120,7 @@ namespace WindowsFormsApp1.Week7
                 }
                 imgCanny = new Image<Gray, byte>(imgInput.Width, imgInput.Height, new Gray(0));
                 imgCanny = imgInput.Canny(int.Parse(textBox1.Text.ToString()), int.Parse(textBox2.Text.ToString()));
-                imageBox2.Image = imgCanny;
+                pictureBox2.Image = imgCanny.ToBitmap();
             }
         }
 
@@ -139,7 +139,7 @@ namespace WindowsFormsApp1.Week7
                 }
                 imgCanny = new Image<Gray, byte>(imgInput.Width, imgInput.Height, new Gray(0));
                 imgCanny = imgInput.Canny(int.Parse(textBox1.Text.ToString()), int.Parse(textBox2.Text.ToString()));
-                imageBox2.Image = imgCanny;
+                pictureBox2.Image = imgCanny.ToBitmap();
             }
         }
 
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1.Week7
                 imgSobel = new Image<Gray, float>(imgInput.Width, imgInput.Height, new Gray(0));
 
                 imgSobel = imgGray.Sobel(1, 1, int.Parse(textBox3.Text.ToString()));
-                imageBox2.Image = imgSobel;
+                pictureBox2.Image = imgSobel.ToBitmap();
             }
         }
 
@@ -181,7 +181,7 @@ namespace WindowsFormsApp1.Week7
                 imgLaplacian = new Image<Gray, float>(imgInput.Width, imgInput.Height, new Gray(0));
 
                 imgLaplacian = imgGray.Laplace(int.Parse(textBox4.Text.ToString()));
-                imageBox2.Image = imgLaplacian;
+                pictureBox2.Image = imgLaplacian.ToBitmap();
             }
         }
     }

@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.Week6
         private void button1_Click(object sender, EventArgs e)
         {
             play = true;
-            imageBox1.Image = null;
+            pictureBox1.Image = null;
             Application.Idle += ProcessFrame1;
         }
 
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1.Week6
             if (capture != null)
             {
                 capture.Read(frame);
-                imageBox1.Image = frame.ToImage<Bgr, byte>();
+                pictureBox1.Image = frame.ToImage<Bgr, byte>().ToBitmap();
             }
         }
 
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1.Week6
             frame = capture.QueryFrame();
             grayVDO = frame.ToImage<Gray, byte>();
             binaryVDO = grayVDO.ThresholdBinary(new Gray(150), new Gray(255));
-            imageBox1.Image = binaryVDO;
+            pictureBox1.Image = binaryVDO.ToBitmap();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1.Week6
 
         private void button5_Click(object sender, EventArgs e)
         {
-            imageBox2.Image = imageBox1.Image;
+            pictureBox2.Image = pictureBox1.Image;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -89,15 +89,16 @@ namespace WindowsFormsApp1.Week6
 
             if (saveImage.ShowDialog() == DialogResult.OK)
             {
-                imageBox2.Image.Save(saveImage.FileName);
+                pictureBox2.Image.Save(saveImage.FileName);
             }
         }
+
 
         private void ProcessFrame3(object sender, EventArgs e)
         {
             frame = capture.QueryFrame();
             grayVDO = frame.ToImage<Gray, byte>();
-           imageBox1.Image = grayVDO;
+           pictureBox1.Image = grayVDO.ToBitmap();
         }
     }
 }
