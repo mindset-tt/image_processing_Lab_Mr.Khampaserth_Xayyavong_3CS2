@@ -31,8 +31,9 @@ namespace WindowsFormsApp1
             //Application.Run(new Image_Processing_to_Black_And_White_ComboBox());
             //Application.Run(new EmguCV_Real_time());
             //Application.Run(new EmguCV_detect_border());
-            Application.Run(new EmguCV_Morphology());
+            //Application.Run(new EmguCV_Morphology());
             Application.Run(new EmguCV_Morphology_Value_set());
+            Application.Run(new EmguCV_Morphology_Scroll_Bar());
         }
     }
 }

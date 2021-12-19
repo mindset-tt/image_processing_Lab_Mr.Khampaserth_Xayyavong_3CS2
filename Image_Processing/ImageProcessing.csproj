@@ -161,6 +161,12 @@
     <Compile Include="Week8\EmguCV_Morphology.Designer.cs">
       <DependentUpon>EmguCV_Morphology.cs</DependentUpon>
     </Compile>
+    <Compile Include="Week8\EmguCV_Morphology_Scroll_Bar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week8\EmguCV_Morphology_Scroll_Bar.Designer.cs">
+      <DependentUpon>EmguCV_Morphology_Scroll_Bar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Week8\EmguCV_Morphology_Value_set.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Week8\EmguCV_Morphology.resx">
       <DependentUpon>EmguCV_Morphology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week8\EmguCV_Morphology_Scroll_Bar.resx">
+      <DependentUpon>EmguCV_Morphology_Scroll_Bar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Week8\EmguCV_Morphology_Value_set.resx">
       <DependentUpon>EmguCV_Morphology_Value_set.cs</DependentUpon>

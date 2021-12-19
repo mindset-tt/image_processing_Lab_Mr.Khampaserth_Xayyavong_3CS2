@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.Week8
         {
             InitializeComponent();
         }
-        int dlt, ers, opn, cln, gra, th, bh, dltb, ersb, opnb, clnb;
+        int dlt, ers, opn, cln, gra, th, bh, dltb, ersb, opnb, clnb, dlttb, erstb, opntb, clntb;
         Image<Bgr, byte> inputImage;
         Image<Bgr, byte> colorImage;
         Image<Gray, byte> binaryImage, morphoImage;
@@ -218,6 +218,11 @@ namespace WindowsFormsApp1.Week8
                 MessageBox.Show("Not null");
                 return;
             }
+            else if (string.IsNullOrEmpty(textBox16.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
             else
             {
                 if (inputImage != null)
@@ -225,7 +230,7 @@ namespace WindowsFormsApp1.Week8
                     binaryImage = new Image<Gray, byte>(inputImage.Width,
                         inputImage.Height);
                     binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                        new Gray(150),
+                        new Gray(int.Parse(textBox16.Text)),
                         new Gray(255)).Dilate(int.Parse(textBox8.Text));//pien
                     pictureBox2.Image = binaryImage.ToBitmap();
                 }
@@ -239,6 +244,11 @@ namespace WindowsFormsApp1.Week8
                 MessageBox.Show("Not null");
                 return;
             }
+            else if (string.IsNullOrEmpty(textBox14.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
             else
             {
                 if (inputImage != null)
@@ -246,7 +256,7 @@ namespace WindowsFormsApp1.Week8
                     binaryImage = new Image<Gray, byte>(inputImage.Width,
                         inputImage.Height);
                     binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                        new Gray(150),
+                        new Gray(int.Parse(textBox14.Text)),
                         new Gray(255)).Erode(int.Parse(textBox9.Text));//pien
                     pictureBox2.Image = binaryImage.ToBitmap();
                 }
@@ -260,12 +270,17 @@ namespace WindowsFormsApp1.Week8
                 MessageBox.Show("Not null");
                 return;
             }
+            else if (string.IsNullOrEmpty(textBox13.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
             else
             {
                 if (inputImage != null)
                 {
                     binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                        new Gray(150),
+                        new Gray(int.Parse(textBox13.Text)),
                         new Gray(255));
 
                     Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
@@ -288,12 +303,17 @@ namespace WindowsFormsApp1.Week8
                 MessageBox.Show("Not null");
                 return;
             }
+            else if (string.IsNullOrEmpty(textBox12.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
             else
             {
                 if (inputImage != null)
                 {
                     binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                        new Gray(150),
+                        new Gray(int.Parse(textBox12.Text)),
                         new Gray(255));
 
                     Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
@@ -319,9 +339,132 @@ namespace WindowsFormsApp1.Week8
             th = int.Parse(textBox6.Text);
             bh = int.Parse(textBox7.Text);
             dltb = int.Parse(textBox8.Text);
+            dlttb = int.Parse(textBox16.Text);
+            erstb = int.Parse(textBox14.Text);
+            opntb = int.Parse(textBox13.Text);
+            clntb = int.Parse(textBox12.Text);
             ersb = int.Parse(textBox9.Text);
             opnb = int.Parse(textBox10.Text);
             clnb = int.Parse(textBox11.Text);
+
+        }
+
+        private void textBox12_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox12.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox11.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(int.Parse(textBox12.Text)),
+                        new Gray(255));
+
+                    Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
+                        new Size(int.Parse(textBox11.Text), int.Parse(textBox11.Text)), //pien
+                        new Point(-1, -1));
+                    morphoImage = binaryImage.MorphologyEx(MorphOp.Close,
+                        kernel,
+                        new Point(-1, -1), 1,
+                        BorderType.Default,
+                        new MCvScalar(1.0));
+                    pictureBox2.Image = morphoImage.ToBitmap();
+                }
+            }
+        }
+
+        private void textBox13_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox13.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox10.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(int.Parse(textBox13.Text)),
+                        new Gray(255));
+
+                    Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
+                        new Size(int.Parse(textBox10.Text), int.Parse(textBox10.Text)), //pien
+                        new Point(-1, -1));
+                    morphoImage = binaryImage.MorphologyEx(MorphOp.Open,
+                        kernel,
+                        new Point(-1, -1), 1,
+                        BorderType.Default,
+                        new MCvScalar(1.0));
+                    pictureBox2.Image = morphoImage.ToBitmap();
+                }
+            }
+        }
+
+        private void textBox16_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox8.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox16.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = new Image<Gray, byte>(inputImage.Width,
+                        inputImage.Height);
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(int.Parse(textBox16.Text)),
+                        new Gray(255)).Dilate(int.Parse(textBox8.Text));//pien
+                    pictureBox2.Image = binaryImage.ToBitmap();
+                }
+            }
+        }
+
+        private void textBox14_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox9.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox14.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = new Image<Gray, byte>(inputImage.Width,
+                        inputImage.Height);
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(int.Parse(textBox14.Text)),
+                        new Gray(255)).Erode(int.Parse(textBox9.Text));//pien
+                    pictureBox2.Image = binaryImage.ToBitmap();
+                }
+            }
         }
 
         private void erosionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -420,67 +563,120 @@ namespace WindowsFormsApp1.Week8
 
         private void dilationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (inputImage != null)
+            if (string.IsNullOrEmpty(textBox8.Text))
             {
-                binaryImage = new Image<Gray, byte>(inputImage.Width,
-                    inputImage.Height);
-                binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                    new Gray(150),
-                    new Gray(255)).Dilate(dltb);//pien
-                pictureBox2.Image = binaryImage.ToBitmap();
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox16.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = new Image<Gray, byte>(inputImage.Width,
+                        inputImage.Height);
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(dlttb),
+                        new Gray(255)).Dilate(dltb);//pien
+                    pictureBox2.Image = binaryImage.ToBitmap();
+                }
             }
         }
 
         private void erosionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (inputImage != null)
+            if (string.IsNullOrEmpty(textBox9.Text))
             {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox14.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else 
+            {
+                if (inputImage != null)
+                {
                 binaryImage = new Image<Gray, byte>(inputImage.Width,
                     inputImage.Height);
                 binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                    new Gray(150),
+                    new Gray(erstb),
                     new Gray(255)).Erode(ersb);//pien
                 pictureBox2.Image = binaryImage.ToBitmap();
+                }
             }
+
         }
 
         private void openingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (inputImage != null)
+            if (string.IsNullOrEmpty(textBox12.Text))
             {
-                binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                    new Gray(150),
-                    new Gray(255));
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox11.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(opntb),
+                        new Gray(255));
 
-                Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
-                    new Size(opnb, opnb), //pien
-                    new Point(-1, -1));
-                morphoImage = binaryImage.MorphologyEx(MorphOp.Open,
-                    kernel,
-                    new Point(-1, -1), 1,
-                    BorderType.Default,
-                    new MCvScalar(1.0));
-                pictureBox2.Image = morphoImage.ToBitmap();
+                    Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
+                        new Size(opnb, opnb), //pien
+                        new Point(-1, -1));
+                    morphoImage = binaryImage.MorphologyEx(MorphOp.Open,
+                        kernel,
+                        new Point(-1, -1), 1,
+                        BorderType.Default,
+                        new MCvScalar(1.0));
+                    pictureBox2.Image = morphoImage.ToBitmap();
+                }
             }
         }
 
         private void closingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (inputImage != null)
+            if (string.IsNullOrEmpty(textBox11.Text))
             {
-                binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
-                    new Gray(150),
-                    new Gray(255));
+                MessageBox.Show("Not null");
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox12.Text))
+            {
+                MessageBox.Show("Not null");
+                return;
+            }
+            else
+            {
+                if (inputImage != null)
+                {
+                    binaryImage = inputImage.Convert<Gray, byte>().ThresholdBinary(
+                        new Gray(clntb),
+                        new Gray(255));
 
-                Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
-                    new Size(clnb, clnb),//pien
-                    new Point(-1, -1));
-                morphoImage = binaryImage.MorphologyEx(MorphOp.Close,
-                    kernel,
-                    new Point(-1, -1), 1,
-                    BorderType.Default,
-                    new MCvScalar(1.0));
-                pictureBox2.Image = morphoImage.ToBitmap();
+                    Mat kernel = CvInvoke.GetStructuringElement(ElementShape.Rectangle,
+                        new Size(clnb, clnb), //pien
+                        new Point(-1, -1));
+                    morphoImage = binaryImage.MorphologyEx(MorphOp.Close,
+                        kernel,
+                        new Point(-1, -1), 1,
+                        BorderType.Default,
+                        new MCvScalar(1.0));
+                    pictureBox2.Image = morphoImage.ToBitmap();
+                }
             }
         }
 
