@@ -278,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="image\118331381_324241168628900_3775018869720072343_n.png" />
+    <Content Include="image\maxresdefault.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
