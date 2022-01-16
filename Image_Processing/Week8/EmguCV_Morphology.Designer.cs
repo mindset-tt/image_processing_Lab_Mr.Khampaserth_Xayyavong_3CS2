@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Week8
             this.morphologyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1386, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1076, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,28 +174,28 @@ namespace WindowsFormsApp1.Week8
             // dilationToolStripMenuItem1
             // 
             this.dilationToolStripMenuItem1.Name = "dilationToolStripMenuItem1";
-            this.dilationToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dilationToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.dilationToolStripMenuItem1.Text = "Dilation";
             this.dilationToolStripMenuItem1.Click += new System.EventHandler(this.dilationToolStripMenuItem1_Click);
             // 
             // erosionToolStripMenuItem1
             // 
             this.erosionToolStripMenuItem1.Name = "erosionToolStripMenuItem1";
-            this.erosionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.erosionToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.erosionToolStripMenuItem1.Text = "Erosion";
             this.erosionToolStripMenuItem1.Click += new System.EventHandler(this.erosionToolStripMenuItem1_Click);
             // 
             // openingToolStripMenuItem1
             // 
             this.openingToolStripMenuItem1.Name = "openingToolStripMenuItem1";
-            this.openingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.openingToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.openingToolStripMenuItem1.Text = "Opening";
             this.openingToolStripMenuItem1.Click += new System.EventHandler(this.openingToolStripMenuItem1_Click);
             // 
             // closingToolStripMenuItem1
             // 
             this.closingToolStripMenuItem1.Name = "closingToolStripMenuItem1";
-            this.closingToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.closingToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.closingToolStripMenuItem1.Text = "Closing";
             this.closingToolStripMenuItem1.Click += new System.EventHandler(this.closingToolStripMenuItem1_Click);
             // 
@@ -221,7 +221,7 @@ namespace WindowsFormsApp1.Week8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 560);
+            this.ClientSize = new System.Drawing.Size(1076, 560);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

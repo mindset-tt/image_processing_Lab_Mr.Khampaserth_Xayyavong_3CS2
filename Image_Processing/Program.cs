@@ -6,6 +6,7 @@ using WindowsFormsApp1.Week5;
 using WindowsFormsApp1.Week6;
 using WindowsFormsApp1.Week7;
 using WindowsFormsApp1.Week8;
+using WindowsFormsApp1.Week9;
 
 namespace WindowsFormsApp1
 {
@@ -34,6 +35,7 @@ namespace WindowsFormsApp1
             Application.Run(new EmguCV_Morphology());
             Application.Run(new EmguCV_Morphology_Value_set());
             Application.Run(new EmguCV_Morphology_Scroll_Bar());
+            Application.Run(new EmguCV_Contour());
         }
     }
 }

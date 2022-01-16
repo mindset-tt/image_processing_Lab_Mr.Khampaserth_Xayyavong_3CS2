@@ -173,6 +173,12 @@
     <Compile Include="Week8\EmguCV_Morphology_Value_set.Designer.cs">
       <DependentUpon>EmguCV_Morphology_Value_set.cs</DependentUpon>
     </Compile>
+    <Compile Include="Week9\EmguCV_Contour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week9\EmguCV_Contour.Designer.cs">
+      <DependentUpon>EmguCV_Contour.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Week2\GrayScale_Black_and_White_and_Invert.resx">
       <DependentUpon>GrayScale_Black_and_White_and_Invert.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Week8\EmguCV_Morphology_Value_set.resx">
       <DependentUpon>EmguCV_Morphology_Value_set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week9\EmguCV_Contour.resx">
+      <DependentUpon>EmguCV_Contour.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
